@@ -1,0 +1,164 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+section{
+    height: 100vh;
+    background: linear-gradient(to left bottom ,#845EC2,#C493FF);
+    font-family: 'Smooch Sans', sans-serif;
+    word-spacing: 2px;
+}
+.score{
+    color: gold;
+    display: flex;
+    height: 20vh;
+    justify-content: space-around;
+    align-items: center;
+}
+.score h2{
+    font-size:2rem;
+}
+.score p{
+    font-size: 1.5rem;
+    padding:0.25em;
+    text-align: center;
+}
+/* the intro section would fade out to reveal actual game */
+.intro{
+    height:50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* what  to ,time, way,delay */
+    transition: opacity 0.5s ease;
+}
+.intro h2{
+    font-size: 3rem;
+    color:bisque;
+}
+.intro button,.match button{
+    background-color:azure;
+    border: none;
+    color: darkmagenta;
+    width:fit-content;
+    padding: 0.5em;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 15%;
+    cursor: pointer;
+}
+.match{
+    position: absolute;
+    top:50%;
+    left:50%;
+    /* first for going right and second for going down minus means go oppsite i.e right and up*/
+    transform: translate(-50%,-50%);
+    transition: opacity 0.5s ease 0.5s;
+}
+.winner{
+    color: bisque;
+    text-align: center;
+}
+.hands,.options{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.player-hand{
+    /* cheeky way to edit image */
+    transform: rotateY(180deg);   
+}
+div.fadeout{
+    /* behaviour of div when cursor is over it  */
+    /* the trick here is to make the enitre back screen transperant and remove cursor pointer from all buttons 
+    and create illusion that only intro screen is present and remove this fade out on clicking lets play */
+    opacity: 0;
+    pointer-events: none;
+}
+div.fadein{
+    opacity: 1;
+    pointer-events: all;
+}
+
+@keyframes shakePlayer{
+    /* rotate should remain 180deg or else it will invert back */
+    /*translate y goes down if -ve then goes up*/
+    0%{
+        
+        transform: rotateY(180deg) translateY(0px);
+    }
+    15%{
+        
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    25%{
+        
+        transform: rotateY(180deg) translateY(0px);
+    }
+    35%{
+        
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    50%{
+        
+        transform: rotateY(180deg) translateY(0px);
+    }
+    65%{
+        
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    75%{
+        
+        transform: rotateY(180deg) translateY(0px);
+    }
+    85%{
+        
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    100%{
+        
+        transform: rotateY(180deg) translateY(0px);
+    }
+}
+@keyframes shakeComputer{
+    
+    /*translate y goes down if -ve then goes up*/
+    0%{
+        
+        transform:  translateY(0px);
+    }
+    15%{
+        
+        transform: translateY(-50px);
+    }
+    25%{
+        
+        transform: translateY(0px);
+    }
+    35%{
+        
+        transform: translateY(-50px);
+    }
+    50%{
+        
+        transform:  translateY(0px);
+    }
+    65%{
+        
+        transform: translateY(-50px);
+    }
+    75%{
+        
+        transform:  translateY(0px);
+    }
+    85%{
+        
+        transform:  translateY(-50px);
+    }
+    100%{
+        
+        transform: translateY(0px);
+    }
+}

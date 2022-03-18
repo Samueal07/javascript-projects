@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <link rel="icon" href="assets/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="game">
+        <div class="score">
+            <!-- scoreboard part -->
+            <div class="player-score">
+                <h2>Player</h2>
+                <p>0</p>
+            </div>
+            <div class="computer-score">
+                <h2>Computer</h2>
+                <p>0</p>
+            </div>
+        </div>
+        <!-- this intro screen comes before all  -->
+        <div class="intro">
+            <h2>Rock Paper Scissor</h2>
+            <button>Play</button>
+        </div>
+        <!-- comes after scoreboard and has the images -->
+        <div class="match fadeout">
+            <h2 class="winner">Choose an option</h2>
+            <!-- initially rock then change in js also note to invert the images so that they face each other -->
+            <div class="hands">
+                <img class="player-hand"src="assets/rock.png" alt="">
+                <img class="computer-hand"src="assets/rock.png" alt="">
+            </div>
+            <div class="options">
+                <button class="rock">rock</button>
+                <button class="paper">paper</button>
+                <button class="scissors">scissors</button>
+            </div>
+        </div>
+        
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
