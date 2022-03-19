@@ -1,0 +1,69 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+h1,h2{
+    font-family: cursive,sans-serif;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(to bottom left,#C5FCEE,#66BAA8,#00BBE7);
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+}
+section{
+    background: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.5));
+    display: grid;
+    padding: 2.5rem;
+    border-radius: 3%;
+    /* make 4 col of 8rem size */
+    grid-template-columns: repeat(4,8rem);
+    /* make 4 rows of 8rem size */
+    grid-template-rows: repeat(4,8rem);
+    gap:2em;
+    /* how far the is the oject from user
+     imp its the child that gets the perspective */
+    perspective: 800px;
+    
+}
+.card{
+
+    position: relative;
+ /* for child elements keep them intact */
+  /* the presever 3d should be on child and parent should have persepective prop */
+    transform-style: preserve-3d;
+    transition:all 2s cubic-bezier(0.175,0.885,0.32,1.275) ;
+    box-shadow: rgba(0,0,0,0.2) 0px 5px 15px;
+    /* for 3d rotation to work we need to give it a perscpetive see in section */
+   
+}
+
+.face,.back{
+    /* to fit all img we make it equal to div height and width 
+    */
+    width: 100%;
+    height: 100%;
+    /* to stack back and face on top of each other we use absolute then using z-indexing put it back */
+    position: absolute;
+    /* so that we can target togglecards in js */
+    pointer-events: none;
+
+}
+.back{
+    background:linear-gradient( to top right,#E4F3F9,#389CB7,#006CCE) ;
+    /* so now we it will show fact as backpart while rotating */
+    backface-visibility: hidden;
+}
+
+.toggleCard{
+    transform: rotateY(180deg);
+    
+}
+/* revert images to orginal */
+.face{
+    transform: rotateY(-180deg);
+}
