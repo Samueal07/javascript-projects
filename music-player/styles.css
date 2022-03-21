@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box ;
+}
+body{
+    font-family: 'Bungee', cursive;
+}
+.app{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1{
+    margin: 0.5em 0 0.25em 0;
+    text-align: center;   
+}
+header p{
+    font-size: 0.75em;
+}
+
+.pads{
+    background: lightblue;
+    width: 100%;
+    display: flex;
+}
+/* take pads and select all divs inside pads */
+.pads > div{
+    height:100px;
+    width: 100px;
+    /* had tree things what it equally gives everyone space */
+    flex:1;
+}
+
+.pad1{
+   background:#D18CE0; 
+}
+.pad2{
+    background:#97DBAE; 
+ }
+ .pad3{
+    background:#85F4FF; 
+ }
+ .pad4{
+    background:#F999B7; 
+ }
+ .pad5{
+    background:#FFBF86; 
+ }
+ .pad6{
+    background:#28FFBF; 
+ 
+}
+
+
+
+.visual>div{
+    position:absolute ;
+    height: 50px;
+    width: 50px;
+    border-radius:50%;
+    bottom:0%;
+    left:20%;
+    bottom:0%;
+    z-index: -1;
+}
+
+ @keyframes jump{
+     0%{
+        bottom:0%;
+        left:20%;
+     }
+     50%{
+        bottom:50%;
+        left:50%;
+
+     }
+     100%{
+         bottom:0%;
+         left:80%;
+     }
+ }
+ .visual>div{
+    position: absolute;
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+    /* start at this postion before jump is ase */
+    bottom:0%
+     
+ }
