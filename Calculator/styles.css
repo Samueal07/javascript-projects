@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+}
+h2{
+    font-family: 'Palette Mosaic', cursive;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    color: #FF6F91; 
+}
+body{
+   
+    background: linear-gradient(to right, #e84393 , #000000 );
+
+}
+.calculator-grid{
+    display:grid;
+    justify-content: center;
+    /* reaally imp we want to content i.e.the symbols no to be centered and also take up spaces see diff in align itmes */
+    /* align-items: center; */
+    align-content: center;
+    min-height: 100vh;
+    /* we need 4 columns with 100px with and keep repeating it */
+    grid-template-columns: repeat(4,100px);
+    /* we need to make the output number display to grow as much as it wants so min120 maxinfi */
+    grid-template-rows: minmax(120px,auto) repeat(5,100px);
+}
+/* all elements inside div .calculator-grid */
+.calculator-grid> button{
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: 2px solid aliceblue;
+    outline: none;
+    background-color: rgba(255,255,255,0.75);
+}
+
+.calculator-grid> button:hover{
+    background-color: rgba(255,255,255,0.90);
+}
+
+.span-two{
+    /* to make them take 2 unit of width */
+    grid-column: span 2;
+}
+
+.output{
+    /* stretches output div from 1st col to last col */
+    grid-column: 1/-1;
+    background-color: rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 10px;
+    /* to avoid overflowing of numbers  */
+    /* break word means spacing in betweeen each word */
+    word-wrap:break-word ;
+    word-break: break-all;
+}
+
+.previous-operand{
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+}
+.current-operand{
+    color: rgba(255,255,255,1);
+    font-size: 1.75rem;
+}
