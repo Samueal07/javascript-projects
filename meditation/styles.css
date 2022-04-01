@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.app{
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.player-container{
+    /* in order to have the cicle move easily we put relative on parent and absolute on child */
+    position: relative;
+}
+.player-container svg{
+    position: absolute;
+    height:50%;
+    top: 50%;
+    left: 50%;
+    /* using translate as its big svg and going out of div */
+    /* translate x -50 puts it tpwarsds left as per axis notation*/
+    transform: translate(-50%,-50%) rotate(-90deg);
+    /* we use it as we are not able to click play button */
+    pointer-events: none;
+}
+.time-select,.sound-picker,.player-container{
+    height: 80%;
+    /* flex is used as parent has flex property */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.time-display{
+    /* also note this is in center becoz of display flex
+    /* already player-container relative */
+    position: absolute;
+    bottom:10%;
+    color: white;
+    font-size: 2rem;
+}
+ /* for time being video is hidden by display hidden */
+video{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    /*zero default*/
+    z-index: -1;
+}
+
+.time-select button,.sound-picker button{
+    color:white;
+    width:30%;
+    height: 10%;
+    /* note its background and not background color*/
+    background: none;
+    border: 2px solid white;
+    border-radius: 5%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition:all 0.5s ease;
+}
+
+.time-select button:hover{
+    color:black;
+    background-color: white;
+}
+
+.sound-picker button{
+    border:none;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding:2em;
+}
+/*cool css selector refernce to select individual child*/
+.sound-picker button:nth-child(1){
+    background: lightskyblue;
+}
+.sound-picker button:nth-child(2){
+    background: lightcoral;
+}
+/* very imp in order to fit img inside div either go for width of div as fit content*/
+/* or go for img as height100%*/
+
+.sound-picker button img{
+    height: 100%;
+}
